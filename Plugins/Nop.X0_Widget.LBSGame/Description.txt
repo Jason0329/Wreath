@@ -1,0 +1,9 @@
+﻿Group: __Game
+FriendlyName: LBSGame
+SystemName:LBSGame
+Version: 1.00
+SupportedVersions: 3.80
+Author: Jason
+DisplayOrder: -10
+FileName: Nop.X0_Widget.LBSGame.dll
+Description: This is GoTrueCar send sms text plugin 69486892

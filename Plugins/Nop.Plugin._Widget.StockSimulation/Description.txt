@@ -1,0 +1,9 @@
+﻿Group: Widgets
+FriendlyName: Stock Simulation
+SystemName:Stock Simulation
+Version: 1.00
+SupportedVersions: 3.90
+Author: Jason
+DisplayOrder: 0
+FileName: Nop.X0_Widget.Widget.StockSimulation.dll
+Description: This is StockSimulation Plugin

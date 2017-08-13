@@ -1,0 +1,57 @@
+﻿@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Core.Domain.Catalog;
+@using Newtonsoft.Json;
+@using Nop.Web.Models.Customer;
+@using Nop.Core;
+@using Nop.Core.Infrastructure;
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+
+
+
+    //Html.AppendScriptParts("//maps.google.com/maps/api/js?key=AIzaSyAo3iJ5qOrZuX9vTIFbZdKy6mVqaF-zz9Y&amp;sensor=false&amp;language=zh-TW&amp;libraries=geometry");
+    //page class
+    //Html.AppendPageCssClassParts("html-home-page");
+    //title
+    Html.AddTitleParts(T("PageTitle.Login").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-login-page");
+   <style>
+
+      #map {
+        height: 500px;
+      }
+    </style>
+    //register URL with return URL (if specified)
+    var registerUrl = Url.RouteUrl("Register");
+    if (!String.IsNullOrEmpty(this.Context.Request.QueryString["returnUrl"]))
+    {
+        var webHelper = EngineContext.Current.Resolve<IWebHelper>();
+        registerUrl = webHelper.ModifyQueryString(registerUrl, "returnurl=" + HttpUtility.UrlEncode(this.Context.Request.QueryString["returnUrl"]), null);
+    }
+}
+
+hi
+
+@* <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAo3iJ5qOrZuX9vTIFbZdKy6mVqaF-zz9Y&callback=initMap">
+    </script>*@
+
+  <div id="map"></div>
+    <script>
+        function initMap() {
+            // Create a map object and specify the DOM element for display.
+            var map = new google.maps.Map(document.getElementById('map'), {
+                center: { lat: -34.397, lng: 150.644 },
+                scrollwheel: false,
+                zoom: 8
+            });
+        }
+
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCd5WovLgiieUIm8jLIGwY2wkrFMqIpK78&callback=initMap"
+    async defer></script>
+ 

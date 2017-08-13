@@ -1,0 +1,14 @@
+﻿@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Core.Domain.Catalog;
+@using Newtonsoft.Json;
+
+@{
+    Html.AppendCssFileParts("~/Plugins/Widget.StatisticPriceEachMonth/Content/css/StatisticPrice.css");
+}
+
+<div class="prices">
+<span class="price actual-price">上月均價 @Model</span>
+</div>

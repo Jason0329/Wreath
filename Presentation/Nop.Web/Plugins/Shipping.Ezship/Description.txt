@@ -1,0 +1,9 @@
+﻿Group: Shipping rate computation
+FriendlyName: Ezship	
+SystemName: Shipping.Ezship
+Version: 1.24
+SupportedVersions: 3.90
+Author: Jason
+DisplayOrder: 1
+FileName: Nop.Plugin.Shipping.Ezship.dll
+Description: This plugin offers shipping rates by Ezship

@@ -1,0 +1,25 @@
+﻿@using Nop.Web.Framework;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Framework.UI;
+@using Nop.Core;
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    Html.AppendCssFileParts("~/Plugins/Misc.SMS_SendText/Content/style.css");
+}
+
+<div class="__Container">
+<div class="DescriptionText" >
+<p>感謝您使用GoTrueCar服務</p>
+    <br />
+<p>我們將指派專業購車顧問王顧問於三天內與您聯繫</p>
+<br />
+<p>或直撥GoTrueCar客服專線:<br /><a href="tel:+886-0909-547-009" style="color:red">0909-547-009</a>(點此號碼撥打)<br /><br /> 將有專業客服竭誠為您服務</p>
+</div>
+</div>
+
+<div class="__Container">
+<div class="ConsultantImage">
+<img class="WangImage" src="~/Plugins/Misc.SMS_SendText/Content/gotruecarconsult.png" />
+</div>
+</div>

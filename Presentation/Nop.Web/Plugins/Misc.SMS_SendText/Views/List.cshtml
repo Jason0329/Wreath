@@ -1,0 +1,148 @@
+﻿@model Nop.Plugin.Misc.SMS_SendText.Domain.SMS_Message
+@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@{
+    Layout = "_AdminLayout.cshtml";
+    }
+@{
+    var defaultGridPageSize = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().DefaultGridPageSize;
+    var gridPageSizes = EngineContext.Current.Resolve<Nop.Core.Domain.Common.AdminAreaSettings>().GridPageSizes;
+
+    //page title
+    ViewBag.Title = T("Admin.SMS.SMSList").Text;
+    //active menu item (system name)
+    Html.SetActiveMenuItemSystemName("SMS Message List");
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="content-header clearfix">
+        <h1 class="pull-left">
+            @T("Admin.SMS.SMSList")
+        </h1>
+       
+    </div>
+
+    <div class="content">
+        <div class="form-horizontal">
+            <div class="panel-group">
+              
+
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div id="newsletter-subscriptions-grid"></div>
+
+                        <script>
+                            $(document).ready(function() {
+                                $("#newsletter-subscriptions-grid").kendoGrid({
+                                    dataSource: {
+                                        type: "json",
+                                        transport: {
+                                            read: {
+                                                url: "@Html.Raw(Url.Action("GetSMS_Sender", "SMS_Sender"))",
+                                                type: "POST",
+                                                dataType: "json",
+                                               
+                                            },
+                                            update: {
+                                                url: "@Html.Raw(Url.Action("UpdateSMS_Sender", "SMS_Sender"))",
+                                                type: "POST",
+                                                dataType: "json",
+                                               
+                                            },
+                                            destroy: {
+                                                url: "@Html.Raw(Url.Action("DeleteSMS_Sender", "SMS_Sender"))",
+                                                type: "POST",
+                                                dataType: "json",
+                                                
+                                            }
+                                        },
+                                        schema: {
+                                            data: "Data",
+                                            total: "Total",
+                                            errors: "Errors",
+                                            model: {
+                                                id: "Id",
+                                                fields: {
+                                                    OrderID: { editable: false, type: "string" },
+                                                    CustomerName: { editable: false, type: "string" },
+                                                    PhoneNumber: { editable: false, type: "string" },
+                                                    MessageText: { editable: false, type: "string" },
+                                                    MessageSendTime: { editable: false, type: "date" }
+                                                }
+                                            }
+                                        },
+                                        requestEnd: function(e) {
+                                            if (e.type == "update") {
+                                                this.read();
+                                            }
+                                        },
+                                        error: function(e) {
+                                            display_kendoui_grid_error(e);
+                                            // Cancel the changes
+                                            this.cancelChanges();
+                                        },
+                                       @* pageSize: @(defaultGridPageSize),*@
+                                        serverPaging: true,
+                                        serverFiltering: true,
+                                        serverSorting: true
+                                    },
+                                    pageable: {
+                                        refresh: true,
+                                        numeruc: false,
+                                        previousNext: false,
+                                        info: false,
+                                       @* pageSizes: [@(gridPageSizes)]*@
+                                    },
+                                    editable: {
+                                        confirmation: true, @*"@T("Admin.Common.DeleteConfirmation")",*@
+                                        mode: "inline"
+                                    },
+                                    scrollable: false,
+                                    columns: [
+                                         {
+                                             field: "OrderID",
+                                             title: "@T("Admin.SMS.OrderID")",
+                                            width: 50
+                                         },
+                                        {
+                                            field: "CustomerName",
+                                            title: "@T("Admin.SMS.CustomerName")",
+                                            width: 50
+                                        }, {
+                                            field: "PhoneNumber",
+                                            title: "@T("Admin.SMS.PhoneNumber")",
+                                            width: 100,
+                                            headerAttributes: { style: "text-align:center" },
+                                            attributes: { style: "text-align:center" },
+                                            //template: '# if(Active) {# <i class="fa fa-check true-icon"></i> #} else {# <i class="fa fa-close false-icon"></i> #} #'
+                                        }, 
+                                        {
+                                            field: "MessageText",
+                                            title: "@T("Admin.SMS.MessageText")",
+                                            width: 300
+                                        }, {
+                                            field: "MessageSendTime",
+                                            title: "@T("Admin.SMS.MessageSendTime")",
+                                            width: 200,
+                                            type: "date",
+                                            format: "{0:G}"
+                                        }
+                                    ]
+                                });
+                            });
+                        </script>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+
+
+

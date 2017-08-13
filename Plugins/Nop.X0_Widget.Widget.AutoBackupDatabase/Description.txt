@@ -1,0 +1,9 @@
+﻿Group: Widgets
+FriendlyName: AutoBackupDatabase
+SystemName:AutoBackupDatabase
+Version: 1.00
+SupportedVersions: 3.80
+Author: Jason
+DisplayOrder: 0
+FileName: Nop.X0_Widget.Widget.AutoBackupDatabase.dll
+Description: This is GoTrueCar Blog Plugin

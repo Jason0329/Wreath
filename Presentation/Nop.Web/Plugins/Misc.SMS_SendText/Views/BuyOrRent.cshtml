@@ -1,0 +1,22 @@
+﻿@using Nop.Web.Framework;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Framework.UI;
+@using Nop.Core;
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    Html.AppendCssFileParts("~/Plugins/Misc.SMS_SendText/Content/style.css");
+
+    var id = Request.QueryString["id"];
+}
+
+
+<div class="__Container">
+<div class="DescriptionText" >
+<p>請選擇想購買方式?(僅此一個問題)</p>
+<p><a class="divTableRow cartypeselectingBnt" href="/thanks?id=@id&buy=cash">現金</a><a class="divTableRow cartypeselectingBnt" href="/thanks?id=@id&buy=loan">貸款</a><a class="divTableRow cartypeselectingBnt" href="/thanks?id=@id&buy=rent">租賃（個人/公司)</a></p>
+</div>
+</div>
+
+
+

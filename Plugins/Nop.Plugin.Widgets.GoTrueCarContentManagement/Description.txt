@@ -1,0 +1,9 @@
+﻿Group: Widgets
+FriendlyName: GoTrueCarContentManagement
+SystemName:GoTrueCarContentManagement
+Version: 1.00
+SupportedVersions: 3.80
+Author: Jason
+DisplayOrder: 1
+FileName: Nop.Plugin.Widgets.GoTrueCarContentManagement.dll
+Description: This is GoTrueCar Content Management Plugin

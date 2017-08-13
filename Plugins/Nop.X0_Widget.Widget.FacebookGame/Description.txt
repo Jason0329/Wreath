@@ -1,0 +1,9 @@
+﻿Group: 1XDPlayer
+FriendlyName: FacebookGame
+SystemName:FacebookGame
+Version: 1.00
+SupportedVersions: 3.80
+Author: Jason
+DisplayOrder: 0
+FileName: Nop.X0_Widget.Widget.FacebookGame.dll
+Description: This is GoTrueCar Blog Plugin

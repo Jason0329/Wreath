@@ -1,0 +1,87 @@
+﻿@model Nop.X0_Widget.LBSGame.Domain.GameRecord
+@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Core.Domain.Catalog;
+@using Newtonsoft.Json;
+@using Nop.Web.Models.Customer;
+@using Nop.Core;
+@using Nop.Core.Infrastructure;
+@{
+    Layout = "~/Views/Shared/_ColumnsOne.cshtml";
+
+    //page class
+    //Html.AppendPageCssClassParts("html-home-page");
+    //title
+    Html.AddTitleParts(T("PageTitle.Login").Text);
+    //page class
+    Html.AppendPageCssClassParts("html-login-page");
+
+    //register URL with return URL (if specified)
+    var registerUrl = Url.RouteUrl("Register");
+    if (!String.IsNullOrEmpty(this.Context.Request.QueryString["returnUrl"]))
+    {
+        var webHelper = EngineContext.Current.Resolve<IWebHelper>();
+        registerUrl = webHelper.ModifyQueryString(registerUrl, "returnurl=" + HttpUtility.UrlEncode(this.Context.Request.QueryString["returnUrl"]), null);
+    }
+}
+
+<div class="page login-page">
+    <div class="page-title">
+        <h1>@T("Account.Login.Welcome")</h1>
+    </div>
+
+    <div class="page-body">
+        <div class="customer-blocks">
+         
+              @*  <div class="new-wrapper register-block">
+                    <div class="title">
+                        <strong>@T("Account.Login.NewCustomer")</strong>
+                    </div>
+                    <div class="text">
+                        @T("Account.Login.NewCustomerText")
+                    </div>
+                    <div class="buttons">
+                        <input type="button" class="button-1 register-button" onclick="location.href='@registerUrl'" value="@T("Account.Register")" />
+                    </div>
+                </div>*@
+            
+            <div class="returning-wrapper fieldset">
+                @using (Html.BeginForm())
+                {
+                    var validationSummary = Html.ValidationSummary(true, T("Account.Login.Unsuccessful").Text);
+                    <div class="title">
+                        <strong>@T("Account.Login.ReturningCustomer")</strong>
+                    </div>
+                    if (!MvcHtmlString.IsNullOrEmpty(validationSummary))
+                    {
+                        <div class="message-error">@validationSummary</div>
+                    }
+                    <div class="form-fields">
+                       
+                            <div class="inputs">
+                                @T("Game Name")
+                                @Html.TextBoxFor(m => m.GameName)
+                               
+                            </div>
+                        
+                       
+                        <div class="inputs">
+                            @T("Team Name")
+                            @Html.TextBoxFor(m => m.TeamName)
+                          
+                        </div>
+                  
+                     
+                    </div>
+                    <button class="btn waves-effect waves-light" name="InitialGame" type="submit">
+                        @T("Account.Login.LoginButton")
+                    </button>
+                }
+            </div>
+        </div>
+      
+       @* @Html.Action("TopicBlock", "Topic", new { systemName = "LoginRegistrationInfo" })*@
+    </div>
+</div>

@@ -1,0 +1,294 @@
+﻿@model Nop.X0_Widget.Widget.StatisticPriceEachMonth.Domain.StatisticPriceMonthly
+@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Core.Domain.Catalog;
+@using Newtonsoft.Json;
+
+@{
+    Html.AppendCssFileParts("~/Plugins/Widget.StatisticPriceEachMonth/Content/css/StatisticPrice.css");
+}
+@if(Model.StatisticPriceMontlyList.Count>0)
+{
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+<script>$(function () {
+    
+  
+    Highcharts.createElement('link', {
+        href: 'https://fonts.googleapis.com/css?family=Unica+One',
+        rel: 'stylesheet',
+        type: 'text/css'
+    }, null, document.getElementsByTagName('head')[0]);
+
+    Highcharts.theme = {
+        colors: ['#2b908f', '#90ee7e', '#f45b5b', '#7798BF', '#aaeeee', '#ff0066', '#eeaaee',
+           '#55BF3B', '#DF5353', '#7798BF', '#aaeeee'],
+        chart: {
+            backgroundColor: {
+                linearGradient: { x1: 0, y1: 0, x2: 1, y2: 1 },
+                stops: [
+                   [0, '#2a2a2b'],
+                   [1, '#3e3e40']
+                ]
+            },
+            style: {
+                fontFamily: 'sans-serif'
+            },
+            plotBorderColor: '#606063'
+        },
+        title: {
+            style: {
+                color: '#E0E0E3',
+                textTransform: 'uppercase',
+                fontSize: '20px'
+            }
+        },
+        subtitle: {
+            style: {
+                color: '#E0E0E3',
+                textTransform: 'uppercase'
+            }
+        },
+        xAxis: {
+            gridLineColor: '#707073',
+            labels: {
+                style: {
+                    color: '#E0E0E3'
+                }
+            },
+            lineColor: '#707073',
+            minorGridLineColor: '#505053',
+            tickColor: '#707073',
+            title: {
+                style: {
+                    color: '#A0A0A3'
+
+                }
+            }
+        },
+        yAxis: {
+            gridLineColor: '#707073',
+            labels: {
+                style: {
+                    color: '#E0E0E3'
+                }
+            },
+            lineColor: '#707073',
+            minorGridLineColor: '#505053',
+            tickColor: '#707073',
+            tickWidth: 1,
+            title: {
+                style: {
+                    color: '#A0A0A3'
+                }
+            }
+        },
+        tooltip: {
+            backgroundColor: 'rgba(0, 0, 0, 0.85)',
+            style: {
+                color: '#F0F0F0'
+            }
+        },
+        plotOptions: {
+            series: {
+                dataLabels: {
+                    color: '#B0B0B3'
+                },
+                marker: {
+                    lineColor: '#333'
+                }
+            },
+            boxplot: {
+                fillColor: '#505053'
+            },
+            candlestick: {
+                lineColor: 'white'
+            },
+            errorbar: {
+                color: 'white'
+            }
+        },
+        legend: {
+            itemStyle: {
+                color: '#E0E0E3'
+            },
+            itemHoverStyle: {
+                color: '#FFF'
+            },
+            itemHiddenStyle: {
+                color: '#606063'
+            }
+        },
+        credits: {
+            style: {
+                color: '#666'
+            }
+        },
+        labels: {
+            style: {
+                color: '#707073'
+            }
+        },
+
+        drilldown: {
+            activeAxisLabelStyle: {
+                color: '#F0F0F3'
+            },
+            activeDataLabelStyle: {
+                color: '#F0F0F3'
+            }
+        },
+
+        navigation: {
+            buttonOptions: {
+                symbolStroke: '#DDDDDD',
+                theme: {
+                    fill: '#505053'
+                }
+            }
+        },
+
+        // scroll charts
+        rangeSelector: {
+            buttonTheme: {
+                fill: '#505053',
+                stroke: '#000000',
+                style: {
+                    color: '#CCC'
+                },
+                states: {
+                    hover: {
+                        fill: '#707073',
+                        stroke: '#000000',
+                        style: {
+                            color: 'white'
+                        }
+                    },
+                    select: {
+                        fill: '#000003',
+                        stroke: '#000000',
+                        style: {
+                            color: 'white'
+                        }
+                    }
+                }
+            },
+            inputBoxBorderColor: '#505053',
+            inputStyle: {
+                backgroundColor: '#333',
+                color: 'silver'
+            },
+            labelStyle: {
+                color: 'silver'
+            }
+        },
+
+        navigator: {
+            handles: {
+                backgroundColor: '#666',
+                borderColor: '#AAA'
+            },
+            outlineColor: '#CCC',
+            maskFill: 'rgba(255,255,255,0.1)',
+            series: {
+                color: '#7798BF',
+                lineColor: '#A6C7ED'
+            },
+            xAxis: {
+                gridLineColor: '#505053'
+            }
+        },
+
+        scrollbar: {
+            barBackgroundColor: '#808083',
+            barBorderColor: '#808083',
+            buttonArrowColor: '#CCC',
+            buttonBackgroundColor: '#606063',
+            buttonBorderColor: '#606063',
+            rifleColor: '#FFF',
+            trackBackgroundColor: '#404043',
+            trackBorderColor: '#404043'
+        },
+
+        // special colors for some of the
+        legendBackgroundColor: 'rgba(0, 0, 0, 0.5)',
+        background2: '#505053',
+        dataLabelsColor: '#B0B0B3',
+        textColor: '#C0C0C0',
+        contrastTextColor: '#F0F0F3',
+        maskColor: 'rgba(255,255,255,0.3)'
+    };
+    
+    // Apply the theme
+    Highcharts.setOptions(Highcharts.theme);
+
+    //data
+    Highcharts.chart('container', {
+      
+        chart: {
+            type: 'line'
+        },
+        title: {
+            text: '台灣新車歷史成交價格-@Model.StatisticPriceMontlyList[0].Name'
+        },
+        subtitle: {
+            text: '資料來源: GoTruecar.com'
+        },
+        xAxis: {
+            categories:@Html.Raw(JsonConvert.SerializeObject(Model.MonthList))
+        },
+        yAxis: {
+            title: {
+                text: '價格'
+            }
+        },
+        plotOptions: {
+            line: {
+                dataLabels: {
+                    enabled: true
+                },
+                enableMouseTracking: true
+            }
+        },
+        series: [{
+            name: '官方售價',
+            data: @Model.MSRP_Json
+        }, {
+            name: '平均成交價',
+            data: @Model.MonthlyAveragePrice_Json
+            },{
+                name: 'GoTruecar成交價',
+                data: @Model.MonthlyGotruecarPrice_Json 
+                }
+        ]
+    });
+});</script>
+
+<div class="price-trend">
+    @T("LastMonth.PriceTrend")@Model.Name
+</div>
+ <div id="container" style="min-width: 310px; height: 400px; margin: 20px 0 20px 0"></div>
+    
+    
+<div class="tg-wrap"><table class="tg">
+  <tr>
+    <th class="tg-m9ep" colspan="2">上月成交價-@Model.Name<br/>(以上價格為新車裸車現金成交價)</th>
+  </tr>
+  <tr>
+    <td class="tg-f4ib">官方售價</td>
+    <td class="tg-f4ib">@Model.StatisticPriceMontlyList[Model.StatisticPriceMontlyList.Count-1].MSRP</td>
+  </tr>
+  <tr>
+    <td class="tg-sl8y">上月平均成交價</td>
+    <td class="tg-sl8y">@Model.StatisticPriceMontlyList[Model.StatisticPriceMontlyList.Count-1].MonthlyAveragePrice</td>
+  </tr>
+  <tr>
+    <td class="tg-u4sb">上月GoTruecar成交價</td>
+    <td class="tg-u4sb">@Model.StatisticPriceMontlyList[Model.StatisticPriceMontlyList.Count-1].MonthlyGotruecarPrice</td>
+  </tr>
+</table>
+    </div>
+
+}

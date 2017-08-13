@@ -1,0 +1,22 @@
+﻿@using Nop.Web.Framework;
+@using Nop.Core.Infrastructure;
+@using Nop.Web.Framework.UI;
+@using Nop.Core;
+@{
+    Layout = "~/Views/Shared/_ColumnsTwo.cshtml";
+
+    Html.AppendCssFileParts("~/Plugins/Misc.SMS_SendText/Content/style.css");
+
+    var id = Request.QueryString["id"];
+}
+
+
+<div class="__Container">
+<div class="DescriptionText" >
+<p>需引薦嚴選經銷商，瞭解購車流程了嗎?</p>
+<p><a class="divTableRow cartypeselectingBnt" href="/BuyOrRent?id=@id">有購車需求，請GoTRUECAR聯繫我，瞭解嚴選經銷商資訊</a><a class="divTableRow cartypeselectingBnt" href="/considering">還再考慮車款，暫時不須引薦</a></p>
+</div>
+</div>
+
+
+

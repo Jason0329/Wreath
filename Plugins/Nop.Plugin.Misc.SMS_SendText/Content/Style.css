@@ -1,0 +1,25 @@
+﻿.ConsultantImage { 
+    max-width:300px;
+    width:100%;
+    margin: auto;
+}
+
+.WangImage {
+    width:100%;
+}
+
+
+.__Container {
+    width:80%;
+    margin:auto;
+}
+
+.DescriptionText {
+    color:#0f6ab3;
+    font-size:20px;
+    font-family:'微軟正黑體';
+    font-weight:800;
+    text-align:center;
+    padding-bottom:30px;
+    display: inline-block;
+}

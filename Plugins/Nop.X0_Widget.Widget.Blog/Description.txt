@@ -1,0 +1,9 @@
+﻿Group: Widgets
+FriendlyName: Blog
+SystemName:Blog
+Version: 1.00
+SupportedVersions: 3.90
+Author: Jason
+DisplayOrder: 0
+FileName: Nop.X0_Widget.Widget.Blog.dll
+Description: This is GoTrueCar Blog Plugin

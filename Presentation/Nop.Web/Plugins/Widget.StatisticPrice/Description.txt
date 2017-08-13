@@ -1,0 +1,9 @@
+﻿Group: 0_Widgets
+FriendlyName: StatisticPrice
+SystemName:StatisticPrice
+Version: 1.00
+SupportedVersions: 3.80
+Author: Jason
+DisplayOrder: -1
+FileName: Nop.X0_Widget.Widget.StatisticPrice.dll
+Description: This is GoTrueCar StatisticPrice Plugin

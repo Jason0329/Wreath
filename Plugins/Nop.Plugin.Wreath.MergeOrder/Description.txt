@@ -1,0 +1,9 @@
+﻿Group: Widgets
+FriendlyName: WreathMergeOrder
+SystemName:WreathMergeOrder
+Version: 1.00
+SupportedVersions: 3.80
+Author: Jason
+DisplayOrder: 1
+FileName: Nop.Plugin.Wreath.MergeOrder.dll
+Description: This is GoTrueCar send sms text plugin 69486892
