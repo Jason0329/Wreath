@@ -16,7 +16,9 @@ namespace Nop.Plugin.Shipping.Ezship
 
         public string GetUrl(string trackingNumber)
         {
-            throw new NotImplementedException();
+            string url = "https://www.ezship.com.tw/emap/rv_request_web.jsp?su_id=a3261478@gmail.com";
+            url = string.Format(url, trackingNumber);
+            return url;
         }
 
         public bool IsMatch(string trackingNumber)

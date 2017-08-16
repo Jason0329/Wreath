@@ -1,6 +1,6 @@
-﻿Group: Shipping rate computation
-FriendlyName: Manual (Fixed or By Weight)
-SystemName: Shipping.FixedOrByWeight
+Group: Shipping rate computation
+FriendlyName: Manual1 (Fixed or By Weight)
+SystemName: Shipping.FixedOrByWeight1
 Version: 1.02
 SupportedVersions: 3.90
 Author: nopCommerce team
