@@ -1,4 +1,4 @@
-Group: Shipping rate computation
+﻿Group: Shipping rate computation
 FriendlyName: USPS (US Postal Service)
 SystemName: Shipping.USPS
 Version: 1.30

@@ -12,16 +12,26 @@ namespace Nop.Plugin.Shipping.Ezship.Controllers
     {
         ActionResult EzshipResponseController()
         {
-            return null;
+            return View("~/Plugins/Shipping.Ezship/Views/Configure.cshtml");
         }
 
 
         //[ChildActionOnly]
         public ActionResult Configure()
         {
-            var model=1;
+            var model = new object();
 
             return View("~/Plugins/Shipping.Ezship/Views/Configure.cshtml", model);
+        }
+
+        public ActionResult PublicInfoController()
+        {
+            return View("~/Plugins/Shipping.Ezship/Views/Configure.cshtml");
+        }
+
+        public ActionResult EzshipingController()
+        {
+            return View("~/Plugins/Shipping.Ezship/Views/Configure.cshtml");
         }
     }
 }

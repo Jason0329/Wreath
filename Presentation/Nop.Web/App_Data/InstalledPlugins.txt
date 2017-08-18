@@ -18,5 +18,7 @@ Shipping.USPS
 Tax.FixedOrByCountryStateZip
 Widgets.GoogleAnalytics
 Widgets.NivoSlider
-Shipping.Ezship
 Shipping.FixedOrByWeight1
+Blog
+BlogRecommandArticle
+Shipping.Ezship

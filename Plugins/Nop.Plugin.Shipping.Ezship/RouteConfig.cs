@@ -13,7 +13,7 @@ namespace Nop.Plugin.Shipping.Ezship
     {
         public int Priority
         {
-            get { return 1; }
+            get { return 0; }
         }
 
         public void RegisterRoutes(System.Web.Routing.RouteCollection routes)
@@ -25,10 +25,20 @@ namespace Nop.Plugin.Shipping.Ezship
             routes.MapRoute("Plugin.Shipping.Ezship.Configure",
                 "Plugins/Ezship/Configure",
                 new { controller = "Ezship", action = "Configure", },
-                new[] { "Nop.Plugin.Shipping.Ezship.Controllers" }
-           );
+                new[] { "Nop.Plugin.Shipping.Ezship.Controllers" });
 
-            //ViewEngines.Engines.Insert(0, new CustomViewEngine());
+
+            routes.MapRoute("Plugin.Shipping.Ezship.PublicInfo",
+               "Plugins/Ezship/PublicInfo",
+               new { controller = "Ezship", action = "PublicInfo", },
+               new[] { "Nop.Plugin.Shipping.Ezship.Controllers" });
+
+            routes.MapRoute("Plugin.Shipping.Ezship.Ezshipping",
+              "Ezshipping",
+              new { controller = "Ezship", action = "Ezshiping", },
+              new[] { "Nop.Plugin.Shipping.Ezship.Controllers" });
+
+            ViewEngines.Engines.Insert(0, new CustomViewEngine());
         }
     }
 }

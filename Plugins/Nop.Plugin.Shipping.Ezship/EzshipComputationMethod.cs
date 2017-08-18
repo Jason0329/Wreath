@@ -16,7 +16,7 @@ using Nop.Services.Localization;
 
 namespace Nop.Plugin.Shipping.Ezship
 {
-    public class EzshipComputationMethod : BasePlugin, IShippingRateComputationMethod
+    public class EzshipComputationMethod : BasePlugin//,// IShippingRateComputationMethod
     {
         private IMeasureService _measureService;
         private ISettingService _settingService;
@@ -53,25 +53,25 @@ namespace Nop.Plugin.Shipping.Ezship
 
             this._traceMessages = new StringBuilder();
         }
-        public ShippingRateComputationMethodType ShippingRateComputationMethodType => throw new NotImplementedException();
+    //    public ShippingRateComputationMethodType ShippingRateComputationMethodType => throw new NotImplementedException();
 
-        public IShipmentTracker ShipmentTracker => throw new NotImplementedException();
+    //    public IShipmentTracker ShipmentTracker => throw new NotImplementedException();
 
-        public void GetConfigurationRoute(out string actionName, out string controllerName, out RouteValueDictionary routeValues)
-        {
-            actionName = "Configure";
-            controllerName = "Ezship";
-            routeValues = new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Shipping.Ezship.Controllers" }, { "area", null } };
-        }
+    //    public void GetConfigurationRoute(out string actionName, out string controllerName, out RouteValueDictionary routeValues)
+    //    {
+    //        actionName = "Configure";
+    //        controllerName = "Ezship";
+    //        routeValues = new RouteValueDictionary { { "Namespaces", "Nop.Plugin.Shipping.Ezship.Controllers" }, { "area", null } };
+    //    }
 
-        public decimal? GetFixedRate(GetShippingOptionRequest getShippingOptionRequest)
-        {
-            throw new NotImplementedException();
-        }
+    //    public decimal? GetFixedRate(GetShippingOptionRequest getShippingOptionRequest)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
 
-        public GetShippingOptionResponse GetShippingOptions(GetShippingOptionRequest getShippingOptionRequest)
-        {
-            throw new NotImplementedException();
-        }
+    //    public GetShippingOptionResponse GetShippingOptions(GetShippingOptionRequest getShippingOptionRequest)
+    //    {
+    //        throw new NotImplementedException();
+    //    }
     }
 }

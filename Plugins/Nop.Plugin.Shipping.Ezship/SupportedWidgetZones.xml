@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SupportedWidgetZones>  
+  <WidgetZone>blogpage_blogrecommand</WidgetZone>
+  <WidgetZone>blogpost_page_before_comments</WidgetZone>
+</SupportedWidgetZones>
