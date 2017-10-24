@@ -111,6 +111,7 @@
                                                 @Html.Raw(item.FormattedCustomAddressAttributes)
                                             </li>
                                         }
+                                        
                                     </ul>
                                     <div class="select-button">
                                         <input type="button" value="@T("Checkout.BillToThisAddress")" class="button-1 select-billing-address-button" onclick="selectBillingAddress@(item.Id)()"/>
@@ -156,6 +157,7 @@
                             dataDictAddress.TemplateInfo.HtmlFieldPrefix = "NewAddress";
                             @Html.Partial("_CreateOrUpdateAddress", Model.NewAddress, dataDictAddress)
                         }
+                      
                     </div>
                 </div>
                 @Html.Widget("checkout_billing_address_bottom")

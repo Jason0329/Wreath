@@ -25,10 +25,10 @@ namespace Nop.X0_Widget.Widget.StatisticPriceEachMonth
            out RouteValueDictionary routeValues)
         {
             actionName = "Configure";
-            controllerName = "BlogRecommand";
+            controllerName = "WreathShippingCheckout";
             routeValues = new RouteValueDictionary()
            {
-               { "Namespaces", "Nop.X0_Widget.Widget.BlogRecommandArticle.Controllers" },
+               { "Namespaces", "Nop.X0_Widget.Widget.WreathShippingCheckout.Controllers" },
                { "area", null }
            };
         }
@@ -39,11 +39,11 @@ namespace Nop.X0_Widget.Widget.StatisticPriceEachMonth
 
             //if (widgetZone == "productlist_page_last_month_price")
             //{
-                actionName = "BlogRecommandPost";
-                controllerName = "BlogRecommand";
+                actionName = "WreathShippingCheckoutPost";
+                controllerName = "WreathShippingCheckout";
                 routeValues = new RouteValueDictionary
                 {
-                    {"Namespaces", "Nop.X0_Widget.Widget.BlogRecommandArticle.Controllers"},
+                    {"Namespaces", "Nop.X0_Widget.Widget.WreathShippingCheckout.Controllers"},
                     {"area", null},
                     {"widgetZone", widgetZone}
                 };
@@ -64,7 +64,7 @@ namespace Nop.X0_Widget.Widget.StatisticPriceEachMonth
 
         public IList<string> GetWidgetZones()
         {
-            return new List<string>() { "blogpage_blogrecommand", "blogpost_page_before_comments" };//, "product_page_statistic_price"};//, "productlist_page_last_month_price" };
+            return new List<string>() { "checkout_billing_address_field" };
         }
         
         public void ManageSiteMap(SiteMapNode rootNode)
@@ -72,10 +72,10 @@ namespace Nop.X0_Widget.Widget.StatisticPriceEachMonth
 
             var menuItem = new SiteMapNode()
             {
-                SystemName = "BlogRecommand",
+                SystemName = "WreathShippingCheckout",
                 Title = "Blog Recommand",
-                ControllerName = "BlogRecommand",
-                ActionName = "BlogRecommandPost",
+                ControllerName = "WreathShippingCheckout",
+                ActionName = "WreathShippingCheckoutPost",
                 Visible = true,
                 RouteValues = new RouteValueDictionary() { { "area", null } },
             };

@@ -1,0 +1,128 @@
+﻿@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Core.Domain.Catalog;
+@using Newtonsoft.Json;
+
+@{
+    Html.AppendCssFileParts("~/Plugins/Widget.WreathShippingAtCheckout/Content/css/WreathShipping.css");
+}
+
+
+
+<div class="inputs custom-attributes">
+    <label>寄送方式:</label>
+
+    <ul class="option-list">
+        <li>
+            <input id="address_attribute_3_7" type="radio" name="address_attribute_3" value="PickupStore">
+            <label for="address_attribute_3_7">店到店</label>
+        </li>
+        <li>
+            <input id="address_attribute_3_8" type="radio" name="address_attribute_3" value="PostAddress">
+            <label for="address_attribute_3_8">郵寄</label>
+        </li>
+    </ul>
+    <span class="required">*</span>
+</div>
+
+<div class="inputs NewPostAddress">
+    <label for="NewAddress_PostAddress">郵寄地址:</label>
+    <input class="text-box single-line" data-val="true" data-val-required="請輸入郵寄地址" id="NewAddress_PostAddress" name="NewAddress.Email" type="text" value="">
+    <span class="required">*</span>
+</div>
+<div class="buttons">
+    <input type="button" name="SelcetPickupStore" value="選擇店到店門市" class="SelectPickupStore button-1">
+</div>
+
+<script>
+    $(function () {
+        $('.SelectPickupStore').click(
+            function () {
+                $.ajax({
+                    cache: false,
+                    type: "POST",
+                    url: "/WreathShipping/WreathShippingMethodByStore",
+                    contentType: 'application/x-www-form-urlencoded',//'application/json; charset=utf-8',
+                    data: { countryId: "123" },
+                    //headers: {
+                    //    'name-api-key': 'ewf45r4435trge',
+                    //    'Content-Type': 'application/x-www-form-urlencoded'
+                    //},
+                    success: function (data) {
+                        
+                    },
+                    error: function (xhr, ajaxOptions, thrownError) {
+                        //alert('Failed to subscribe.');
+                        //subscribeProgress.hide();
+                    }
+                });
+            })
+    });
+
+</script>
+
+<script>
+    $(function () {
+        $('.NewPostAddress').hide();
+        $('.SelectPickupStore').hide();
+        $('.new-address-next-step-button').css("backgroundColor", "#d4d4d4");
+        $('.new-address-next-step-button').prop('disabled', true);
+    })
+
+    $('input:radio[name="address_attribute_3"]').change(
+        function () {
+            if (this.checked) {
+                if (this.value == 'PostAddress')
+                {
+                    $('.NewPostAddress').show();
+                    $('.SelectPickupStore').hide();
+                }
+
+                if (this.value == 'PickupStore')
+                {
+                    $('.NewPostAddress').hide();
+                    $('.SelectPickupStore').show();
+                }
+                // note that, as per comments, the 'changed'
+                // <input> will *always* be checked, as the change
+                // event only fires on checking an <input>, not
+                // on un-checking it.
+                // append goes here
+            }
+        });
+
+    $('#NewAddress_PostAddress').keyup(
+        function () {
+            if (this.value != null) {
+                $('.new-address-next-step-button').css("backgroundColor", "#4ab2f1");
+                $('.new-address-next-step-button').prop('disabled', false);
+            }
+            if (this.value == "")
+            {
+                $('.new-address-next-step-button').css("backgroundColor", "#d4d4d4");
+                $('.new-address-next-step-button').prop('disabled', true);
+            }
+        });
+
+    @*$('.new-address-next-step-button').click(function () {
+        $.ajax({
+            cache: false,
+            type: "POST",
+            url: "@(Url.RouteUrl("WreathShippingMethod"))",
+            data: { "countryId": selectedItem, "addSelectStateItem": "true" },
+            success: function (data) {
+                ddlStates.html('');
+                $.each(data, function (id, option) {
+                    ddlStates.append($('<option></option>').val(option.id).html(option.name));
+                });
+                statesProgress.hide();
+            },
+            error: function (xhr, ajaxOptions, thrownError) {
+                alert('Failed to retrieve states.');
+                statesProgress.hide();
+            }
+        });
+    });*@
+</script>

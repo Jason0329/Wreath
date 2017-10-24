@@ -1,0 +1,59 @@
+﻿@using Nop.Core.Infrastructure;
+@using System;
+@using Nop.Web.Framework;
+@using Nop.Web.Framework.UI;
+@using Nop.Core.Domain.Catalog;
+@using Newtonsoft.Json;
+
+@{
+    Html.AppendCssFileParts("~/Plugins/Widget.WreathShippingAtCheckout/Content/css/WreathShipping.css");
+}
+
+@if(!Model.AllTag.Contains("車訊網"))
+{<script async src="//pnncps.aotter.net/pnncpb.js?key=EQ-292620"></script>
+}
+<div id="GotruecarIntro">
+
+
+<div class="brand-content"><a href="@Model.BrandUrl" ><img class="carbrand-logo-content" src="@Model.BrandImageUrl" /></a><p class="carbrand-content"><a href="@Model.BrandUrl" class="link-color">@Model.Brand 本月報價(我是連結)</a>，歡迎查詢，<a href="/" class="link-color">GoTrueCar(我是連結)</a>提供各個車款當月報價資訊，和經銷商合作並提供服務給消費者合理的報價、查價，歡迎查詢。</p>
+<p class="carbrand-content">@Model.BrandContent</p>
+</div>
+<div class="brand-logo"><a href="/"><img class="brand-logo-align" src="https://gotruecar.com/content/images/thumbs/0011843.png" /></a></div>
+<div class="gotrue-content"><p class="gotruecar-content-intro">
+車主購車時，會找業務詢問價格，但至少要你<strong class="RedLine">來店三次</strong>才可能放出相對合理的成交價格，時間花費是非常冗長又煩瑣。<a href="/" class="link-color">GoTrueCar(我是連結)</a>的宗旨在消除車主與業務間的<strong class="RedLine">資訊不對稱</strong>，並且24小時提供報價服務，即可得知市場上<strong class="RedLine">新車真實交易資訊</strong>，幫助消費者購車買對不買貴。
+</p></div>
+
+</div>
+
+
+<div class="section group">
+<div class="recommand-section-header"><h3>相關文章推薦</h3></div>
+ @foreach (var item in Model.RecentlyArticle)
+ {
+<a href="@item._BlogLink">
+	<div class="recommand_box">
+       <div class="RecommandPic"> 
+            <img width="100%" src="@item._ImageLink">
+       </div>
+       <div class="recommand_title">
+            <h3>@item._Title</h3>
+        </div>
+	</div>
+</a>
+ }
+
+
+ @foreach (var item in Model.BrandRelated)
+ {
+<a href="@item._BlogLink">
+	<div class="recommand_box">
+       <div class="RecommandPic"> 
+            <img width="100%" src="@item._ImageLink">
+       </div>
+        <div class="recommand_title">
+        <h3>@item._Title</h3>
+        </div>
+	</div>
+</a>
+ }
+</div>

@@ -6,12 +6,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Web.Mvc;
 
-namespace Nop.X0_Widget.Widget.BlogRecommandArticle.Domain
+namespace Nop.X0_Widget.Widget.WreathShippingCheckout.Domain
 {
-    public class BlogRecommandModel : BaseEntity
+    public class WreathShippingCheckoutModel : BaseEntity
     {
-        public List<BlogRecommandArticleClass> RecentlyArticle { get; set; }
-        public List<BlogRecommandArticleClass> BrandRelated { get; set; }
+        public List<WreathShippingCheckoutClass> RecentlyArticle { get; set; }
+        public List<WreathShippingCheckoutClass> BrandRelated { get; set; }
 
         public string Brand { get; set; }
         public string BrandImageUrl { get; set; }
@@ -20,21 +20,21 @@ namespace Nop.X0_Widget.Widget.BlogRecommandArticle.Domain
         public string BrandContent { get; set; }
         public string AllTag { get; set; }
 
-        public BlogRecommandModel()
+        public WreathShippingCheckoutModel()
         {
-            RecentlyArticle = new List<BlogRecommandArticleClass>();
-            BrandRelated = new List<BlogRecommandArticleClass>();
+            RecentlyArticle = new List<WreathShippingCheckoutClass>();
+            BrandRelated = new List<WreathShippingCheckoutClass>();
         }
     }
 
-    public class BlogRecommandArticleClass
+    public class WreathShippingCheckoutClass
     {
         public string _Title { get; set; }
         public string _ImageLink { get; set; }
         public string Description { get; set; }
         public string _BlogLink { get; set; }
 
-        public BlogRecommandArticleClass(string Title, string BodyOverview , string BlogLink)
+        public WreathShippingCheckoutClass(string Title, string BodyOverview , string BlogLink)
         {
             
             this._Title = Title;

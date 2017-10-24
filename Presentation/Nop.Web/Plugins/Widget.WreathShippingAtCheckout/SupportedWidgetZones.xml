@@ -1,0 +1,5 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<SupportedWidgetZones>  
+  <WidgetZone>checkout_billing_address_bottom</WidgetZone>
+  <WidgetZone>blogpost_page_before_comments</WidgetZone>
+</SupportedWidgetZones>

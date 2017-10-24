@@ -85,7 +85,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.X0_Widget.Widget.Statis
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.Plugin.Misc.SMS_SendText", "Plugins\Nop.Plugin.Misc.SMS_SendText\Nop.Plugin.Misc.SMS_SendText.csproj", "{310C6F80-D742-446B-90A1-2800A5355B09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.X0_Widget.Widget.BlogRecommandArticle", "Plugins\Nop.X0_Widget.Widget.BlogRecommandArticle\Nop.X0_Widget.Widget.BlogRecommandArticle.csproj", "{41D70A2B-FA44-4C3F-911C-FD0E47DE277B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nop.X0_Widget.Widget.WreathShippingAtCheckout", "Plugins\Nop.X0_Widget.Widget.WreathShippingAtCheckout\Nop.X0_Widget.Widget.WreathShippingAtCheckout.csproj", "{41D70A2B-FA44-4C3F-911C-FD0E47DE277B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

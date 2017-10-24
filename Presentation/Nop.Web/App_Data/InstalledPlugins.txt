@@ -19,6 +19,6 @@ Tax.FixedOrByCountryStateZip
 Widgets.GoogleAnalytics
 Widgets.NivoSlider
 Shipping.FixedOrByWeight1
-Blog
-BlogRecommandArticle
 Shipping.Ezship
+WreathShippingAtCheckout
+Blog

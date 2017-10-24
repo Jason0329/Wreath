@@ -155,8 +155,10 @@
             @Html.ValidationMessageFor(model => model.FaxNumber)
         </div>
     }
-    @if (Model.CustomAddressAttributes.Count > 0)
+    @if (Model.CustomAddressAttributes.Count >= 0)
     {
         @Html.Partial("_AddressAttributes", Model.CustomAddressAttributes)
     }
+
+    @Html.Widget("checkout_billing_address_field")
 </div>

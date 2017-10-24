@@ -64,7 +64,7 @@ namespace Nop.X0_Widget.Widget.StatisticPriceEachMonth
 
         public IList<string> GetWidgetZones()
         {
-            return new List<string>() { "blogpage_blogrecommand", "blogpost_page_before_comments" };//, "product_page_statistic_price"};//, "productlist_page_last_month_price" };
+            return new List<string>() { "checkout_billing_address_field" };
         }
         
         public void ManageSiteMap(SiteMapNode rootNode)

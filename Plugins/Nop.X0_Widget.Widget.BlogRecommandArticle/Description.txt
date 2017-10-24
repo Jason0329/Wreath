@@ -1,9 +1,9 @@
 ﻿Group: 0_Widgets
-FriendlyName: BlogRecommandArticle
-SystemName:BlogRecommandArticle
+FriendlyName: WreathShippingCheckout
+SystemName:WreathShippingCheckout
 Version: 1.00
 SupportedVersions: 3.90
 Author: Jason
 DisplayOrder: -1
-FileName: Nop.X0_Widget.Widget.BlogRecommandArticle.dll
-Description: This is GoTrueCar BlogRecommandArticle Plugin
+FileName: Nop.X0_Widget.Widget.WreathShippingCheckout.dll
+Description: This is GoTrueCar WreathShippingCheckout Plugin

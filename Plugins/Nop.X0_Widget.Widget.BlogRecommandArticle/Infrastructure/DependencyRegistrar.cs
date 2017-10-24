@@ -11,11 +11,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Nop.X0_Widget.Widget.BlogRecommandArticle.Infrastructure
+namespace Nop.X0_Widget.Widget.WreathShippingCheckout.Infrastructure
 {
     public class DependencyRegistrar : IDependencyRegistrar
     {
-        private const string CONTEXT_NAME = "nop_object_context_product_view_Widget.blogRecommandArticle";
+        private const string CONTEXT_NAME = "nop_object_context_product_view_Widget.WreathShippingCheckout";
 
       
 

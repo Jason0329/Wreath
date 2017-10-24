@@ -15,6 +15,7 @@ using System.Web.Mvc;
 using System.Xml;
 using Nop.Services.Seo;
 using Nop.Web.Framework;
+using Nop.Services.Customers;
 
 namespace Nop.X0_Widget.Widget.Blog.Controllers
 {
@@ -26,12 +27,13 @@ namespace Nop.X0_Widget.Widget.Blog.Controllers
         private IWebHelper _webHelper;
         private IStoreContext _storeContext;
         private IBlogService _blogService;
-       
+        private ICustomerService _CustomerService;
 
         public RSS_NewsController(IPermissionService PermissionService
             , ILocalizationService localizationService,
             IRepository<BlogPost> BlogPostIRepository,
-            IWebHelper webHelper, IStoreContext storeContext, IBlogService blogService
+            IWebHelper webHelper, IStoreContext storeContext, 
+            IBlogService blogService,ICustomerService CustomerService
            
             )
         {
@@ -41,7 +43,7 @@ namespace Nop.X0_Widget.Widget.Blog.Controllers
             _webHelper = webHelper;
             _storeContext = storeContext;
             _blogService = blogService;
-         
+            _CustomerService = CustomerService;
           
         }
 
@@ -52,7 +54,7 @@ namespace Nop.X0_Widget.Widget.Blog.Controllers
 
             ////string Feed = RssMethod.RssFeed(Request.RequestContext);
 
-           
+
             ////context.HttpContext.Response.ContentType = MimeTypes.ApplicationRssXml;
 
             ////var rssFormatter = new Rss20FeedFormatter(Feed);
@@ -61,10 +63,12 @@ namespace Nop.X0_Widget.Widget.Blog.Controllers
             ////    rssFormatter.WriteTo(writer);
             ////}
 
-           
+
 
             ////return null;
-
+            
+            //string GuidCode = Request.Cookies["Nop.customer"].Value;
+            //var aa = _CustomerService.GetCustomerByGuid(Guid.Parse(GuidCode));
 
             var feed = new SyndicationFeed(
                                     string.Format("{0}: Blog", _storeContext.CurrentStore.GetLocalized(x => x.Name)),

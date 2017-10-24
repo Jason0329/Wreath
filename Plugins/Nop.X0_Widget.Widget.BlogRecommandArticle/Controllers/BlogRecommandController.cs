@@ -30,7 +30,6 @@ namespace Nop.X0_Widget.Widget.BlogRecommandArticle.Controllers
 
         public ActionResult BlogRecommandPost(object additionalData = null)
         {
-            return View("~/Plugins/Widget.BlogRecommandArticle/Views/_BlogRecommandTest.cshtml");
             BlogPost Blog = _blogService.GetBlogPostById((int)additionalData);
             BlogRecommandModel RecommandArticle = new BlogRecommandModel();
             

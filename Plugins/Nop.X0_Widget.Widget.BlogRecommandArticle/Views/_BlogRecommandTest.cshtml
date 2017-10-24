@@ -6,9 +6,27 @@
 @using Newtonsoft.Json;
 
 @{
-    Html.AppendCssFileParts("~/Plugins/Widget.BlogRecommandArticle/Content/css/BlogRecommand.css");
+    Html.AppendCssFileParts("~/Plugins/Widget.WreathShippingCheckout/Content/css/WreathShippingCheckout.css");
 }
 
+@*<script>
+    $(function () {
+        $('.new-address-next-step-button').prop('disabled', true);
+    })
+</script>*@
 
+<div class="inputs custom-attributes">
+    <label>寄送方式:</label>
 
-Hello World!!
+    <ul class="option-list">
+        <li>
+            <input id="address_attribute_1_1" type="radio" name="address_attribute_1" value="1">
+            <label for="address_attribute_1_1">郵寄</label>
+        </li>
+        <li>
+            <input id="address_attribute_1_2" type="radio" name="address_attribute_1" value="2">
+            <label for="address_attribute_1_2">店到店</label>
+        </li>
+    </ul>
+    <span class="required">*</span>
+</div>

@@ -1,5 +1,5 @@
 ﻿using Nop.Web.Framework.Mvc.Routes;
-using Nop.X0_Widget.Widget.BlogRecommandArticle.Infrastructure;
+using Nop.X0_Widget.Widget.WreathShippingCheckout.Infrastructure;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,8 +20,8 @@ namespace Nop.X0_Widget.Widget.StatisticPriceEachMonth
         {
 
 
-            routes.MapRoute("Nop.X0_Widget.Widget.BlogRecommandArticle", "BlogRecommandArticle", new { controller = "BlogRecommand", Action = "BlogRecommandPost" },
-               new[] { "Nop.X0_Widget.Widget.BlogRecommandArticle" });
+            routes.MapRoute("Nop.X0_Widget.Widget.WreathShippingCheckout", "WreathShippingCheckout", new { controller = "WreathShippingCheckout", Action = "WreathShippingCheckoutPost" },
+               new[] { "Nop.X0_Widget.Widget.WreathShippingCheckout" });
 
 
 

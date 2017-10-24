@@ -1,0 +1,9 @@
+﻿Group: 0_Widgets
+FriendlyName: WreathShippingAtCheckout
+SystemName:WreathShippingAtCheckout
+Version: 1.00
+SupportedVersions: 3.90
+Author: Jason
+DisplayOrder: -1
+FileName: Nop.X0_Widget.Widget.WreathShippingAtCheckout.dll
+Description: This is GoTrueCar WreathShippingAtCheckout Plugin
